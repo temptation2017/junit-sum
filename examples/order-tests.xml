@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.shop.OrderServiceTest" tests="6" failures="1" errors="1" skipped="1" time="0.447" timestamp="2026-11-21T12:00:00" hostname="ci-runner-1">
+  <properties>
+    <property name="java.version" value="17.0.12"/>
+  </properties>
+  <testcase name="acceptsPositiveQuantity" classname="com.example.shop.OrderServiceTest" time="0.014"/>
+  <testcase name="rejectsNegativeQuantity" classname="com.example.shop.OrderServiceTest" time="0.021">
+    <failure message="expected:&lt;ACCEPTED&gt; but was:&lt;REJECTED&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;ACCEPTED&gt; but was:&lt;REJECTED&gt;
+	at com.example.shop.OrderServiceTest.rejectsNegativeQuantity(OrderServiceTest.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+</failure>
+  </testcase>
+  <testcase name="throwsOnMissingSku" classname="com.example.shop.OrderServiceTest" time="0.018">
+    <error message="sku is required" type="java.lang.IllegalArgumentException">java.lang.IllegalArgumentException: sku is required
+	at com.example.shop.OrderService.place(OrderService.java:88)
+	at com.example.shop.OrderServiceTest.throwsOnMissingSku(OrderServiceTest.java:67)
+</error>
+  </testcase>
+  <testcase name="skipsWhenInventoryOffline" classname="com.example.shop.OrderServiceTest" time="0.001">
+    <skipped message="inventory service flag is off on this runner"/>
+  </testcase>
+  <testcase name="retryThenPass" classname="com.example.shop.OrderServiceTest" time="0.040">
+    <rerunFailure message="transient timeout talking to catalog" type="java.net.SocketTimeoutException">java.net.SocketTimeoutException: transient timeout talking to catalog
+	at com.example.shop.OrderServiceTest.retryThenPass(OrderServiceTest.java:91)
+</rerunFailure>
+  </testcase>
+  <testcase name="loadsFullCatalog" classname="com.example.shop.CatalogIT" time="0.353"/>
+  <system-out>example run, no production data</system-out>
+</testsuite>

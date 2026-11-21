@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="4" failures="1" errors="0" skipped="0" time="0.186">
+  <testsuite name="tests.test_cart" tests="3" failures="1" errors="0" skipped="0" time="0.081" timestamp="2026-11-21T12:01:00" hostname="ci-runner-1">
+    <testcase classname="tests.test_cart" name="test_add_item" time="0.012"/>
+    <testcase classname="tests.test_cart" name="test_remove_missing" time="0.044">
+      <failure message="AssertionError: expected cart to stay empty">def test_remove_missing():
+    cart = Cart()
+    cart.remove("SKU-404")
+    assert cart.items == []
+E   AssertionError: expected cart to stay empty
+</failure>
+    </testcase>
+    <testcase classname="tests.test_cart" name="test_total" time="0.025"/>
+  </testsuite>
+  <testsuite name="tests.test_pricing" tests="1" failures="0" errors="0" skipped="0" time="0.105">
+    <testcase classname="tests.test_pricing" name="test_discount_stack" time="0.105"/>
+  </testsuite>
+</testsuites>
